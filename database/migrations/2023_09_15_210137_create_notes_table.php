@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
+            $table->string('hash');
+            $table->longText('data');
+            $table->timestamp('destruction_time')->nullable();
             $table->timestamps();
         });
     }
