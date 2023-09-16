@@ -33,7 +33,7 @@ class Note extends Model
      */
     protected static function booted(): void
     {
-        static::created(function (Model $model) {
+        static::creating(function (Model $model) {
             $model->hash = base64_encode(random_bytes(10));
         });
     }
